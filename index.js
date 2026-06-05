@@ -45,7 +45,13 @@ const translations = {
         job4d1: "Conducted identity verification and household data collection for newly displaced families.",
         job4d2: "Entered and updated beneficiary data in the official database with high accuracy.",
         job4d3: "Performed re-verification exercises to reflect changes in family composition and location.",
-        job4d4: "Cross-checked records to prevent duplication and maintain data integrity."
+        job4d4: "Cross-checked records to prevent duplication and maintain data integrity.",
+        skillTitle: "Skills",
+        skill1: "Protection during distribution",
+        skill2: "Computer skills in programming and web design",
+        skill3: "Website design and development",
+        courseTitle: "Courses",
+        course1: "Web design course at Hsoub Academy"
     },
     ar: {
         name: "الان عبد العزيز خلف",
@@ -93,7 +99,13 @@ const translations = {
         job4d1: "إجراء التحقق من الهوية وجمع بيانات الأسر النازحة حديثاً.",
         job4d2: "إدخال وتحديث بيانات المستفيدين في قاعدة البيانات الرسمية بدقة عالية.",
         job4d3: "إجراء تمارين إعادة التحقق لتعكس التغييرات في تكوين الأسرة والموقع.",
-        job4d4: "التحقق  من السجلات لمنع التكرار والحفاظ على سلامة البيانات."
+        job4d4: "التحقق  من السجلات لمنع التكرار والحفاظ على سلامة البيانات.",
+        skillTitle: "المهارات",
+        skill1: "الحماية أثناء التوزيع",
+        skill2: "مهارات الحاسوب في البرمجة وتصميم مواقع الويب",
+        skill3: "تصميم وتطوير مواقع الويب",
+        courseTitle: "الدورات",
+        course1: "دورة تصميم مواقع الويب في أكاديمية حاسوب"
     }
 };
 
@@ -151,6 +163,12 @@ function setLang(lang) {
     document.getElementById('job4-d2').textContent = t.job4d2;
     document.getElementById('job4-d3').textContent = t.job4d3;
     document.getElementById('job4-d4').textContent = t.job4d4;
+    document.getElementById('skill-title').textContent = t.skillTitle;
+    document.getElementById('skill1').textContent = t.skill1;
+    document.getElementById('skill2').textContent = t.skill2;
+    document.getElementById('skill3').textContent = t.skill3;
+    document.getElementById('course-title').textContent = t.courseTitle;
+    document.getElementById('course1').textContent = t.course1;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
