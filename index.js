@@ -1,4 +1,4 @@
-﻿// Dynamic base path for images - handles both local and GitHub Pages
+// Dynamic base path for images - handles both local and GitHub Pages
 const basePath = window.location.pathname.includes('/Alan-Khalaf-cv/') 
     ? '/Alan-Khalaf-cv/images/' 
     : './images/';
@@ -271,7 +271,7 @@ const carouselData = {
                 {
                     title: 'Hygiene Kits, Providing essential health, hygiene packages, and winterization aid to displaced families',
                     description: 'Planned and executed the distribution of hygiene kits and Non-Food Items (NFIs) within emergency WASH and public health intervention programs',
-                    image: '/images/hyg.png'
+                    image: './images/hyg.png'
                 },
                 {
                     title: 'Conducting practical fire safety training and fire extinguisher distribution for camp residents',
@@ -538,6 +538,35 @@ function prevSlide() {
         updateCarousel();
     }
 }
+
+
+// ==========================================
+// SIMPLE ENHANCEMENTS (Reliable)
+// ==========================================
+
+// Scroll Progress Bar + Back to Top visibility
+window.addEventListener('scroll', function() {
+    var scrollProgress = document.getElementById('scrollProgress');
+    if (scrollProgress) {
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrollPercent = (scrollTop / docHeight) * 100;
+        scrollProgress.style.width = scrollPercent + '%';
+    }
+
+    var backToTop = document.getElementById('backToTop');
+    if (backToTop) {
+        if (window.scrollY > 500) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
+    }
+});
+
+// Console greeting
+console.log('%c Alan Abdulaziz Khalaf ', 'background: linear-gradient(135deg, #1a365d, #c53030); color: white; font-size: 24px; padding: 10px 20px; border-radius: 10px;');
+console.log('%c Professional CV Portfolio ', 'color: #c53030; font-size: 14px;');
 
 document.addEventListener('DOMContentLoaded', () => {
     setLang('en');

@@ -599,43 +599,6 @@ body[dir="rtl"] .print-btn {
     background: var(--accent-light);
 }
 
-/* ========== WHATSAPP BUTTON ========== */
-.whatsapp-btn {
-    position: fixed;
-    bottom: 30px;
-    left: 30px;
-    background: #25D366;
-    color: white;
-    border: 2px solid rgba(255,255,255,0.3);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.8rem;
-    box-shadow: 0 16px 40px rgba(0,0,0,0.18);
-    transition: transform 0.3s ease, background 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    text-decoration: none;
-}
-
-body[dir="rtl"] .whatsapp-btn {
-    left: auto;
-    right: 30px;
-}
-
-.whatsapp-btn:hover {
-    transform: scale(1.1);
-    background: #128C7E;
-}
-
-.whatsapp-btn i {
-    color: white;
-}
-
-
 /* ========== CLICKABLE CARDS ========== */
 .clickable-card {
     cursor: pointer;
@@ -950,6 +913,117 @@ body[dir="rtl"] .carousel-nav.next {
     transform: translateY(-2px);
 }
 
+
+
+/* ========== WHATSAPP BUTTON ========== */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: #25D366;
+    color: white;
+    border: 2px solid rgba(255,255,255,0.3);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8rem;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+    transition: transform 0.3s ease, background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    text-decoration: none;
+}
+
+body[dir="rtl"] .whatsapp-btn {
+    left: auto;
+    right: 30px;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    background: #128C7E;
+}
+
+.whatsapp-btn i {
+    color: white;
+}
+
+/* ========== SCROLL PROGRESS BAR ========== */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    z-index: 9998;
+    transition: width 0.1s ease;
+}
+
+/* ========== BACK TO TOP BUTTON ========== */
+.back-to-top {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+body[dir="rtl"] .back-to-top {
+    right: auto;
+    left: 30px;
+}
+
+.back-to-top:hover {
+    background: var(--accent);
+    transform: translateY(-3px);
+}
+
+/* ========== ENHANCED SCROLLBAR ========== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--primary), var(--accent));
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--primary-light), var(--accent-light));
+}
+
+::selection {
+    background: rgba(197,48,48,0.2);
+    color: var(--primary);
+}
+
 /* ========== RESPONSIVE ========== */
 
 @media (max-width: 900px) {
@@ -1058,11 +1132,21 @@ body[dir="rtl"] .carousel-nav.next {
         left: auto;
         right: 20px;
     }
+    .back-to-top {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+        bottom: 80px;
+        right: 20px;
+    }
+    body[dir="rtl"] .back-to-top {
+        left: 20px;
+    }
 }
 
 /* ========== PRINT STYLES ========== */
 @media print {
-    .lang-toggle, .print-btn, .whatsapp-btn {
+    .lang-toggle, .print-btn, .whatsapp-btn, .back-to-top, .scroll-progress {
         display: none !important;
     }
     body {

@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- Language Toggle -->
     <div class="lang-toggle">
         <button class="lang-btn active" onclick="setLang('en')" id="btn-en">English</button>
@@ -19,7 +27,6 @@
     <button class="print-btn" onclick="window.print()" title="Print / طباعة">
         <i class="fas fa-print"></i>
     </button>
-
     <!-- WhatsApp Button -->
     <a href="https://wa.me/963988317684" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" title="WhatsApp / واتساب">
         <i class="fab fa-whatsapp"></i>
