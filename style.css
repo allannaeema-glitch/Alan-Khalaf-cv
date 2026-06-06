@@ -747,7 +747,7 @@ body[dir="rtl"] .carousel-header h2 {
 
 #carouselSlides {
     display: flex;
-    transition: transform 0.4s ease;
+    transition: transform 1.2s ease;
     direction: ltr;
 }
 
@@ -919,6 +919,16 @@ body[dir="rtl"] .carousel-nav.next {
     .main-grid {
         grid-template-columns: 1fr;
     }
+    /* Ensure main content appears before sidebar on small screens */
+    .main-grid .main-content { order: 1; }
+    .main-grid .sidebar { order: 2; }
+    /* reorder sidebar cards: put Skills first, then Languages and Courses */
+    .sidebar .card-skills { order: 1; }
+    .sidebar .card-languages { order: 2; }
+    .sidebar .card-courses { order: 3; }
+    /* keep other sidebar cards after */
+    .sidebar .card-expertise { order: 4; }
+    .sidebar .card-education { order: 5; }
     .header-content {
         flex-direction: column;
         text-align: center;
