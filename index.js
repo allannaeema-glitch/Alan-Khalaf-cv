@@ -269,9 +269,9 @@ const carouselData = {
                     image: './images/Al-Hol-Camp-3.jpg'
                 },
                 {
-                    title: 'Rehabilitating water infrastructure and installing supply tanks in collective shelters and conflict-affected areas',
-                    description: 'Managed the restoration of sanitation facilities and communal water points to mitigate waterborne disease risks and improve basic living standards for vulnerable communities',
-                    image: './images/6.jpg'
+                    title: 'Providing essential health, hygiene packages, and winterization aid to displaced families',
+                    description: 'Planned and executed the distribution of hygiene kits and Non-Food Items (NFIs) within emergency WASH and public health intervention programs',
+                    image: './images/hdist.png'
                 },
                 {
                     title: 'Conducting practical fire safety training and fire extinguisher distribution for camp residents',
@@ -310,9 +310,9 @@ const carouselData = {
                     description: 'إدارة نقاط التوزيع الميدانية وتطبيق معايير الكفاءة والنظافة والسلامة لضمان وصول المواد الغذائية الحيوية للأطفال والنساء بشكل آمن وكريم',
                     image: './images/Al-Hol-Camp-3.jpg'
                 },
-                {
+                 {
                     title: 'تأمين مستلزمات النظافة الأساسية والمواد الإغاثية الشتوية للعائلات النازحة',
-                    description: 'تخطيط وتنفيذ حملات توزيع سلال النظافة  والمواد غير الغذائية (NFIs) كجزء من برامج الإصحاح البيئي والاستجابة الطارئة.',
+                    description: 'تخطيط وتنفيذ حملات توزيع سلال النظافة (Hygiene Kits) والمواد غير الغذائية (NFIs) كجزء من برامج الإصحاح البيئي والاستجابة الطارئة',
                     image: './images/hdist.png'
                 },
                 {
