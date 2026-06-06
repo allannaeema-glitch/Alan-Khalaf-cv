@@ -271,7 +271,7 @@ const carouselData = {
                 {
                     title: 'Hygiene Kits, Providing essential health, hygiene packages, and winterization aid to displaced families',
                     description: 'Planned and executed the distribution of hygiene kits and Non-Food Items (NFIs) within emergency WASH and public health intervention programs',
-                    image: './images/hyg.png'
+                    image: '/images/hyg.png'
                 },
                 {
                     title: 'Conducting practical fire safety training and fire extinguisher distribution for camp residents',
