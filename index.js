@@ -1,4 +1,9 @@
-﻿const translations = {
+﻿// Dynamic base path for images - handles both local and GitHub Pages
+const basePath = window.location.pathname.includes('/Alan-Khalaf-cv/') 
+    ? '/Alan-Khalaf-cv/images/' 
+    : './images/';
+
+const translations = {
     en: {
         name: "ALAN ABDULAZIZ KHALAF",
         location: "Al Hassakah - Tel Hajer",
@@ -468,9 +473,11 @@ function updateCarousel() {
 
         let imageHtml = '';
         if (slide.image) {
+            // Replace relative path with dynamic basePath
+            const imageSrc = slide.image.replace('./images/', basePath);
             imageHtml = `
                 <div style="width:100%; max-height:300px; overflow:hidden; border-radius:8px; margin-bottom:16px; background:#f5f5f5;">
-                    <img src="${slide.image}" alt="${slide.title}" 
+                    <img src="${imageSrc}" alt="${slide.title}" 
                          style="width:100%; height:auto; max-height:300px; object-fit:cover; display:block;"
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     <div style="display:none; width:100%; height:200px; align-items:center; justify-content:center; color:#999; font-size:14px;">
