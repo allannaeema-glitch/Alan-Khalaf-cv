@@ -1,4 +1,4 @@
-// Dynamic base path for images - handles both local and GitHub Pages
+﻿// Dynamic base path for images - handles both local and GitHub Pages
 const basePath = window.location.pathname.includes('/Alan-Khalaf-cv/') 
     ? '/Alan-Khalaf-cv/images/' 
     : './images/';
@@ -271,7 +271,7 @@ const carouselData = {
                 {
                     title: 'Hygiene Kits, Providing essential health, hygiene packages, and winterization aid to displaced families',
                     description: 'Planned and executed the distribution of hygiene kits and Non-Food Items (NFIs) within emergency WASH and public health intervention programs',
-                    image: './images/hyg.png'
+                    image: './images/hdist.png'
                 },
                 {
                     title: 'Conducting practical fire safety training and fire extinguisher distribution for camp residents',
@@ -313,7 +313,7 @@ const carouselData = {
                 {
                     title: 'تأمين مستلزمات النظافة الأساسية والمواد الإغاثية الشتوية للعائلات النازحة',
                     description: 'تخطيط وتنفيذ حملات توزيع سلال النظافة  والمواد غير الغذائية (NFIs) كجزء من برامج الإصحاح البيئي والاستجابة الطارئة.',
-                    image: './images/hyg.png'
+                    image: './images/hdist.png'
                 },
                 {
                     title: 'تدريب سكان المخيمات على مبادئ الدفاع المدني وإخماد الحرائق وتوزيع طفايات الحريق',
