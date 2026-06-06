@@ -69,7 +69,7 @@
                 </div>
 
                 <!-- Expertise -->
-                <div class="card">
+                <div class="card clickable-card" onclick="openCarousel('expertise')">
                     <div class="card-title">
                         <i class="fas fa-star"></i>
                         <span id="exp-title">Expertise</span>
@@ -100,6 +100,7 @@
                             <span id="exp6">Coordination & Stakeholder Engagement</span>
                         </div>
                     </div>
+                    <div class="click-hint"><i class="fas fa-images"></i> <span id="click-hint-exp">Click to add images & description</span></div>
                 </div>
 
                 <!-- Languages -->
@@ -150,7 +151,7 @@
                 </div>
 
                 <!-- Skills -->
-                <div class="card">
+                <div class="card clickable-card" onclick="openCarousel('skills')">
                     <div class="card-title">
                         <i class="fas fa-lightbulb"></i>
                         <span id="skill-title">Skills</span>
@@ -169,10 +170,11 @@
                             <span id="skill3">Website design and development</span>
                         </div>
                     </div>
+                    <div class="click-hint"><i class="fas fa-images"></i> <span id="click-hint-skills">Click to add images & description</span></div>
                 </div>
 
                 <!-- Courses -->
-                <div class="card">
+                <div class="card clickable-card" onclick="openCarousel('courses')">
                     <div class="card-title">
                         <i class="fas fa-graduation-cap"></i>
                         <span id="course-title">Courses</span>
@@ -183,6 +185,7 @@
                             <span id="course1">Web design course at Hsoub Academy</span>
                         </div>
                     </div>
+                    <div class="click-hint"><i class="fas fa-images"></i> <span id="click-hint-courses">Click to add images & description</span></div>
                 </div>
             </aside>
 
@@ -200,11 +203,12 @@
                 </div>
 
                 <!-- Work Experience -->
-                <div class="card">
+                <div class="card clickable-card" onclick="openCarousel('workexp')">
                     <div class="card-title">
                         <i class="fas fa-briefcase"></i>
                         <span id="work-title">Work Experience</span>
                     </div>
+                    <div class="click-hint"><i class="fas fa-images"></i> <span id="click-hint-workexp">Click to add images & description</span></div>
                     <div class="timeline">
                         <!-- Job 1 -->
                         <div class="timeline-item">
@@ -281,6 +285,30 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Carousel Modal -->
+    <div id="carouselModal" class="carousel-modal">
+        <div class="carousel-content">
+            <button class="close-carousel" onclick="closeCarousel()">&times;</button>
+            <div class="carousel-header">
+                <h2 id="carouselTitle">Carousel</h2>
+                <div class="carousel-counter" id="carouselCounter">1 / 1</div>
+                <div class="carousel-note" id="carouselNote">Use arrows to navigate slides</div>
+            </div>
+            <div class="carousel-body">
+                <div class="carousel-slides">
+                    <div id="carouselSlides"></div>
+                </div>
+                <button class="carousel-nav prev" onclick="prevSlide()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-nav next" onclick="nextSlide()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="carousel-indicators" id="carouselIndicators"></div>
         </div>
     </div>
 

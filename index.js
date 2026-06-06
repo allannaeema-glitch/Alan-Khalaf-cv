@@ -1,4 +1,4 @@
-const translations = {
+﻿const translations = {
     en: {
         name: "ALAN ABDULAZIZ KHALAF",
         location: "Al Hassakah - Tel Hajer",
@@ -85,7 +85,7 @@ const translations = {
         job2Company: "بلومونت - الحسكة / المراكز الجماعية",
         job2Role: "مساعد التوزيع اليومي",
         job2d1: "المشاركة في توزيع المساعدات في المراكز الجماعية.",
-        job2d2: "مراقبة أنشطة إدارة النفايات الصلبة .",
+        job2d2: "مراقبة أنشطة إدارة النفايات الصلبة.",
         job2d3: "تتبع حركات النازحين (الوافدين/المغادرين) وصيانة المرافق.",
         job3Company: "بلومونت - مخيم عريشة",
         job3Role: "مساعد الحماية",
@@ -99,7 +99,7 @@ const translations = {
         job4d1: "إجراء التحقق من الهوية وجمع بيانات الأسر النازحة حديثاً.",
         job4d2: "إدخال وتحديث بيانات المستفيدين في قاعدة البيانات الرسمية بدقة عالية.",
         job4d3: "إجراء تمارين إعادة التحقق لتعكس التغييرات في تكوين الأسرة والموقع.",
-        job4d4: "التحقق  من السجلات لمنع التكرار والحفاظ على سلامة البيانات.",
+        job4d4: "التحقق من السجلات لمنع التكرار والحفاظ على سلامة البيانات.",
         skillTitle: "المهارات",
         skill1: "الحماية أثناء التوزيع",
         skill2: "مهارات الحاسوب في البرمجة وتصميم مواقع الويب",
@@ -112,6 +112,7 @@ const translations = {
 function setLang(lang) {
     const t = translations[lang];
     document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
     document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
 
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
@@ -169,9 +170,395 @@ function setLang(lang) {
     document.getElementById('skill3').textContent = t.skill3;
     document.getElementById('course-title').textContent = t.courseTitle;
     document.getElementById('course1').textContent = t.course1;
+
+    document.getElementById('click-hint-exp').textContent = lang === 'ar' ? 'انقر لعرض التفاصيل' : 'Click to view details';
+    document.getElementById('click-hint-workexp').textContent = lang === 'ar' ? 'انقر لعرض التفاصيل' : 'Click to view details';
+    document.getElementById('click-hint-skills').textContent = lang === 'ar' ? 'انقر لعرض التفاصيل' : 'Click to view details';
+    document.getElementById('click-hint-courses').textContent = lang === 'ar' ? 'انقر لعرض التفاصيل' : 'Click to view details';
+    document.getElementById('carouselNote').textContent = lang === 'ar' ? 'استخدم الأسهم للتنقل بين الشرائح' : 'Use arrows to navigate slides';
+
+    const modal = document.getElementById('carouselModal');
+    if (modal && modal.classList.contains('active')) {
+        currentSlideIndex = 0;
+        updateCarousel();
+    }
+}
+
+// ==========================================
+// CAROUSEL DATA - FULL ARABIC SLIDES
+// ==========================================
+const carouselData = {
+    expertise: {
+        title: 'Expertise',
+        titleAr: 'الخبرات',
+        slides: {
+            en: [
+                {
+                    title: 'Distribution Monitoring & Quality Assurance',
+                    description: 'Expert in monitoring aid distribution processes to ensure fairness, transparency, and compliance with humanitarian standards and SOPs.',
+                    image: './images/skill1.jpg'
+                },
+                {
+                    title: 'Registration & Data Management Systems',
+                    description: 'Proficient in beneficiary registration, database management, and maintaining data integrity across complex humanitarian operations.',
+                    image: './images/regis.png'
+                },
+                {
+                    title: 'Protection Referral Mechanisms',
+                    description: 'Skilled in identifying vulnerable cases and implementing protection-sensitive referral pathways in accordance with humanitarian principles.',
+                    image: './images/prot.png'
+                },
+                {
+                    title: 'Case Documentation & Reporting',
+                    description: 'Experienced in comprehensive case documentation, field reporting, and analytical reporting for donor and coordination requirements.',
+                    image: './images/distre.png'
+                },
+                {
+                    title: 'Coordination & Stakeholder Engagement',
+                    description: 'Strong ability to coordinate with multiple agencies, local authorities, and community representatives to ensure effective service delivery.',
+                    image: './images/coor.png'
+                }
+            ],
+            ar: [
+                {
+                    title: 'مراقبة التوزيع وضمان الجودة',
+                    description: 'خبير في مراقبة عمليات توزيع المساعدات لضمان العدالة والشفافية والامتثال للمعايير الإنسانية والإجراءات التشغيلية القياسية.',
+                    image: './images/skill1.jpg'
+                },
+                {
+                    title: 'أنظمة التسجيل وإدارة البيانات',
+                    description: 'متمكن في تسجيل المستفيدين وإدارة قواعد البيانات والحفاظ على سلامة البيانات عبر العمليات الإنسانية المعقدة.',
+                    image: './images/regis.png'
+                },
+                {
+                    title: 'آليات الإحالة للحماية',
+                    description: 'ماهر في تحديد الحالات الضعيفة وتطبيق مسارات الإحالة الحساسة للحماية وفقاً لمبادئ العمل الإنساني.',
+                    image: './images/prot.png'
+                },
+                {
+                    title: 'توثيق الحالات والتقارير',
+                    description: 'ذو خبرة في توثيق الحالات الشاملة وتقارير الميدان والتقارير التحليلية لمتطلبات الجهات المانحة والتنسيق.',
+                    image: './images/distre.png'
+                },
+                {
+                    title: 'التنسيق والتواصل مع الأطراف المعنية',
+                    description: 'قدرة قوية على التنسيق مع وكالات متعددة والسلطات المحلية وممثلي المجتمع لضمان تقديم الخدمات بفعالية.',
+                    image: './images/coor.png'
+                }
+            ]
+        }
+    },
+    workexp: {
+        title: 'Work Experience',
+        titleAr: 'الخبرة العملية',
+        slides: {
+            en: [
+                {
+                    title: 'Emergency humanitarian response and on-ground community support',
+                    description: 'Supervised the ground distribution of humanitarian relief packages and essential supplies in remote camp settings',
+                    image: './images/Al-Hol-Camp-1.jpg'
+                },
+                {
+                    title: 'Emergency bread assistance as a core component of daily food security responses',
+                    description: 'Managed on-ground distribution points and streamlined delivery cycles to guarantee that essential food resources reach vulnerable children safely, efficiently, and with dignity',
+                    image: './images/Al-Hol-Camp-3.jpg'
+                },
+                {
+                    title: 'Hygiene Kits, Providing essential health, hygiene packages, and winterization aid to displaced families',
+                    description: 'Planned and executed the distribution of hygiene kits and Non-Food Items (NFIs) within emergency WASH and public health intervention programs',
+                    image: './images/hygiene.jpg'
+                },
+                {
+                    title: 'Conducting practical fire safety training and fire extinguisher distribution for camp residents',
+                    description: 'Managed safety enhancement and Disaster Risk Reduction (DRR) initiatives, including the allocation of fire mitigation assets and establishing community emergency response teams',
+                    image: './images/Al-Hol.jpg'
+                },
+                {
+                    title: 'Rehabilitating water infrastructure and installing supply tanks in collective shelters and conflict-affected areas',
+                    description: 'Managed the restoration of sanitation facilities and communal water points to mitigate waterborne disease risks and improve basic living standards for vulnerable communities',
+                    image: './images/6.jpg'
+                },
+                {
+                    title: 'Maintenance and Rehabilitation of Shelter Centers for Displaced People',
+                    description: 'Supporting the maintenance and rehabilitation of shelter centers to improve living conditions for displaced people through cleaning activities, sanitation system repairs, infrastructure maintenance, and essential service improvements, ensuring a safe, healthy, and dignified environment for beneficiaries',
+                    image: './images/9.jpg'
+                },
+                {
+                    title: 'Provision of Safe Water for Displaced People',
+                    description: 'Supporting the delivery and distribution of safe water to displaced families through water trucking services and water supply points, ensuring reliable access to clean water and improving health and living conditions in shelters and host communities',
+                    image: './images/33.png'
+                },
+                {
+                    title: 'Distribution of Clothing for Displaced Children',
+                    description: 'Supporting the distribution of clothing to displaced children to meet their basic needs, provide protection from weather conditions, and promote their dignity, well-being, and quality of life',
+                    image: './images/22.png'
+                }
+            ],
+            ar: [
+                {
+                    title: 'الاستجابة الإنسانية الطارئة ودعم الفئات الهشة ميدانياً',
+                    description: 'الإشراف على عمليات توزيع المساعدات الإنسانية والطرود الإغاثية في البيئات النائية ومخيمات اللجوء',
+                    image: './images/Al-Hol-Camp-1.jpg'
+                },
+                {
+                    title: 'توزيع مادة الخبز كجزء من الاستجابة الطارئة للأمن الغذائي اليومي',
+                    description: 'إدارة نقاط التوزيع الميدانية وتطبيق معايير الكفاءة والنظافة والسلامة لضمان وصول المواد الغذائية الحيوية للأطفال والنساء بشكل آمن وكريم',
+                    image: './images/Al-Hol-Camp-3.jpg'
+                },
+                {
+                    title: 'تأمين مستلزمات النظافة الأساسية والمواد الإغاثية الشتوية للعائلات النازحة',
+                    description: 'تخطيط وتنفيذ حملات توزيع سلال النظافة (Hygiene Kits) والمواد غير الغذائية (NFIs) كجزء من برامج الإصحاح البيئي والاستجابة الطارئة.',
+                    image: './images/hygiene.jpg'
+                },
+                {
+                    title: 'تدريب سكان المخيمات على مبادئ الدفاع المدني وإخماد الحرائق وتوزيع طفايات الحريق',
+                    description: 'الإشراف على مشاريع تعزيز السلامة العامة وتوزيع طفايات الحريق وتشكيل لجان طوارئ مجتمعية داخل المخيمات للحد من الخسائر البشرية والمادية',
+                    image: './images/Al-Hol.jpg'
+                },
+                {
+                    title: 'تأهيل البنية التحتية للمياه وتركيب خزانات الإمداد في مراكز الإيواء والمناطق المتضررة من النزاع',
+                    description: 'الإشراف على مشاريع تأهيل شبكات المياه وتركيب خزانات التوزيع لضمان تلبية الاحتياجات اليومية من المياه النظيفة للنازحين في مراكز الإيواء والمخيمات، مما يقلل من مخاطر الأمراض المنقولة بالمياه ويحسن الظروف المعيشية الأساسية للمجتمعات الهشة',
+                    image: './images/6.jpg'
+                },
+                {
+                    title: 'صيانة وإصلاح البنية التحتية في مراكز الإيواء',
+                    description: 'المشاركة في أعمال صيانة شبكات الصرف الصحي وتنظيف المرافق وإصلاح الأعطال الخدمية داخل مراكز الإيواء، بما يساهم في تحسين الظروف الصحية والبيئية للنازحين وضمان استمرارية الخدمات الأساسية في بيئات الإيواء المكتظة والمتحركة',
+                    image: './images/9.jpg'
+                },
+                {
+                    title: 'توفير المياه النظيفة للنازحين',
+                    description: 'المشاركة في عمليات توزيع المياه النظيفة للنازحين من خلال خدمات نقل المياه ونقاط توزيع المياه، مما يضمن وصولًا موثوقًا للمياه النظيفة ويحسن الصحة والظروف المعيشية في مراكز الإيواء والمجتمعات المضيفة',
+                    image: './images/33.png'
+                },
+                {
+                    title: 'توزيع الملابس للأطفال النازحين',
+                    description: 'الإشراف على توزيع الملابس للأطفال النازحين لضمان تلبية احتياجاتهم الأساسية وتقديم الحماية من ظروف الطقس وتعزيز كرامتهم ورفاهيتهم وجودة حياتهم',
+                    image: './images/22.png'
+                }
+            ]
+        }
+    },
+    skills: {
+        title: 'Skills',
+        titleAr: 'المهارات',
+        slides: {
+            en: [
+                {
+                    title: 'Protection During Distribution',
+                    description: 'Implementing protection-sensitive approaches during aid distribution, ensuring dignity, safety, and equitable access for all beneficiaries including vulnerable groups.',
+                    image: './images/dist1.png'
+                },
+                {
+                    title: 'Programming & Web Development',
+                    description: 'Proficient in computer programming, web design, and development using modern technologies and frameworks to create responsive and functional websites.',
+                    image: './images/prog.jpg'
+                },
+                {
+                    title: 'Website Design & Development',
+                    description: 'Experienced in designing and developing professional websites with focus on user experience, accessibility, and modern design principles.',
+                    image: './images/web.png'
+                }
+            ],
+            ar: [
+                {
+                    title: 'الحماية أثناء التوزيع',
+                    description: 'تطبيق مناهج حساسة للحماية أثناء توزيع المساعدات، ضمان الكرامة والسلامة والوصول العادل لجميع المستفيدين بما في ذلك الفئات الضعيفة.',
+                    image: './images/dist1.png'
+                },
+                {
+                    title: 'البرمجة وتطوير الويب',
+                    description: 'متمكن في البرمجة الحاسوبية وتصميم وتطوير مواقع الويب باستخدام التقنيات والأطر الحديثة لإنشاء مواقع متجاوبة ووظيفية.',
+                    image: './images/prog.jpg'
+                },
+                {
+                    title: 'تصميم وتطوير مواقع الويب',
+                    description: 'ذو خبرة في تصميم وتطوير مواقع الويب الاحترافية مع التركيز على تجربة المستخدم وسهولة الوصول ومبادئ التصميم الحديثة.',
+                    image: './images/web.png'
+                }
+            ]
+        }
+    },
+    courses: {
+        title: 'Courses',
+        titleAr: 'الدورات',
+        slides: {
+            en: [
+                {
+                    title: 'Web Design Course - Hsoub Academy',
+                    description: 'Completed comprehensive web design training at Hsoub Academy covering HTML, CSS, JavaScript, responsive design, and modern web development practices.',
+                    image: './images/hsoub.png'
+                }
+                
+            ],
+            ar: [
+                {
+                    title: 'دورة تصميم مواقع الويب - أكاديمية حاسوب',
+                    description: 'أكملت تدريباً شاملاً في تصميم مواقع الويب في أكاديمية حاسوب يغطي HTML وCSS وJavaScript والتصميم المتجاوب وممارسات تطوير الويب الحديثة.',
+                    image: './images/hsoub.png'
+                }
+            ]
+        }
+    }
+};
+
+let currentCarousel = null;
+let currentSlideIndex = 0;
+
+function getCurrentSlides() {
+    const lang = document.documentElement.lang || 'en';
+    const data = carouselData[currentCarousel];
+    return data?.slides?.[lang] || [];
+}
+
+function setCurrentSlides(slides) {
+    const lang = document.documentElement.lang || 'en';
+    carouselData[currentCarousel].slides[lang] = slides;
+}
+
+function openCarousel(type) {
+    currentCarousel = type;
+    currentSlideIndex = 0;
+    document.getElementById('carouselModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+    updateCarousel();
+}
+
+function closeCarousel() {
+    document.getElementById('carouselModal').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function updateCarousel() {
+    const data = carouselData[currentCarousel];
+    const lang = document.documentElement.lang || 'en';
+    const slides = getCurrentSlides();
+
+    document.getElementById('carouselTitle').textContent = lang === 'ar' ? data.titleAr : data.title;
+
+    const slidesContainer = document.getElementById('carouselSlides');
+    const counter = document.getElementById('carouselCounter');
+
+    // Clear and reset container
+    slidesContainer.innerHTML = '';
+    slidesContainer.style.display = 'flex';
+    slidesContainer.style.flexDirection = 'row';
+    slidesContainer.style.width = '100%';
+    slidesContainer.style.transition = 'transform 0.4s ease-in-out';
+
+    if (slides.length === 0) {
+        slidesContainer.innerHTML = `
+            <div class="carousel-slide empty" style="min-width:100%; flex:0 0 100%; display:flex; align-items:center; justify-content:center; padding:40px;">
+                <div style="text-align:center; color:#888;">
+                    <i class="fas fa-image" style="font-size:48px; margin-bottom:16px; display:block;"></i>
+                    <span style="font-size:16px;">${lang === 'ar' ? 'لا توجد شرائح بعد' : 'No slides yet'}</span>
+                </div>
+            </div>
+        `;
+        currentSlideIndex = 0;
+        counter.textContent = lang === 'ar' ? '0 / 0' : '0 / 0';
+        updateIndicators(0);
+        return;
+    }
+
+    // Build all slides
+    slides.forEach((slide, index) => {
+        const slideEl = document.createElement('div');
+        slideEl.className = 'carousel-slide';
+        slideEl.style.cssText = 'min-width:100%; flex:0 0 100%; box-sizing:border-box; padding:20px;';
+
+        let imageHtml = '';
+        if (slide.image) {
+            imageHtml = `
+                <div style="width:100%; max-height:300px; overflow:hidden; border-radius:8px; margin-bottom:16px; background:#f5f5f5;">
+                    <img src="${slide.image}" alt="${slide.title}" 
+                         style="width:100%; height:auto; max-height:300px; object-fit:cover; display:block;"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div style="display:none; width:100%; height:200px; align-items:center; justify-content:center; color:#999; font-size:14px;">
+                        <i class="fas fa-image" style="margin-${lang === 'ar' ? 'left' : 'right'}:8px;"></i> 
+                        ${lang === 'ar' ? 'الصورة غير متوفرة' : 'Image not available'}
+                    </div>
+                </div>
+            `;
+        }
+
+        slideEl.innerHTML = `
+            ${imageHtml}
+            <h3 style="font-size:20px; font-weight:700; margin-bottom:12px; color:#333; line-height:1.4;">${slide.title}</h3>
+            <p style="font-size:15px; line-height:1.7; color:#555;">${slide.description}</p>
+        `;
+        slidesContainer.appendChild(slideEl);
+    });
+
+    currentSlideIndex = Math.min(currentSlideIndex, slides.length - 1);
+    counter.textContent = `${currentSlideIndex + 1} / ${slides.length}`;
+
+    // Apply transform
+    slidesContainer.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+
+    updateIndicators(slides.length);
+}
+
+function updateIndicators(totalSlides) {
+    const indicatorsContainer = document.getElementById('carouselIndicators');
+    indicatorsContainer.innerHTML = '';
+
+    if (totalSlides > 0) {
+        for (let i = 0; i < totalSlides; i++) {
+            const indicator = document.createElement('div');
+            indicator.className = `indicator ${i === currentSlideIndex ? 'active' : ''}`;
+            indicator.style.cssText = `width:10px; height:10px; border-radius:50%; background:${i === currentSlideIndex ? '#007bff' : '#ccc'}; margin:0 5px; cursor:pointer; transition:background 0.3s;`;
+            indicator.onclick = () => {
+                currentSlideIndex = i;
+                updateCarousel();
+            };
+            indicatorsContainer.appendChild(indicator);
+        }
+    }
+}
+
+function nextSlide() {
+    const slides = getCurrentSlides();
+    if (slides.length > 0) {
+        currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+        updateCarousel();
+    }
+}
+
+function prevSlide() {
+    const slides = getCurrentSlides();
+    if (slides.length > 0) {
+        currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+        updateCarousel();
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     setLang('en');
     document.getElementById('profile-img').src = "Alan.jpeg";
+    localStorage.removeItem('carouselData');
+
+    // Close modal when clicking outside
+    document.getElementById('carouselModal').onclick = (e) => {
+        if (e.target.id === 'carouselModal') {
+            closeCarousel();
+        }
+    };
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        const modal = document.getElementById('carouselModal');
+        if (modal && modal.classList.contains('active')) {
+            if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                nextSlide();
+            }
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            }
+            if (e.key === 'Escape') {
+                closeCarousel();
+            }
+        }
+    });
 });
