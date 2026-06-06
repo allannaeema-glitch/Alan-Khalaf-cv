@@ -269,9 +269,9 @@ const carouselData = {
                     image: './images/Al-Hol-Camp-3.jpg'
                 },
                 {
-                    title: 'Hygiene Kits, Providing essential health, hygiene packages, and winterization aid to displaced families',
-                    description: 'Planned and executed the distribution of hygiene kits and Non-Food Items (NFIs) within emergency WASH and public health intervention programs',
-                    image: './images/hdist.png'
+                    title: 'Rehabilitating water infrastructure and installing supply tanks in collective shelters and conflict-affected areas',
+                    description: 'Managed the restoration of sanitation facilities and communal water points to mitigate waterborne disease risks and improve basic living standards for vulnerable communities',
+                    image: './images/6.jpg'
                 },
                 {
                     title: 'Conducting practical fire safety training and fire extinguisher distribution for camp residents',
